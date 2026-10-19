@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Muhammad Ibnu Ikhsan</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #243447;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        /* Navbar */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px #00000010;
+            position: sticky;
+            top: 0;
+        }
+
+        nav {
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #102a43;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #526477;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* Bagian utama */
+        .hero {
+            padding: 65px 0;
+            background: linear-gradient(135deg, #eaf2ff, #f8fbff);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .label {
+            display: inline-block;
+            background: #dbeafe;
+            color: #2563eb;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #102a43;
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        h1 span {
+            color: #2563eb;
+        }
+
+        .intro {
+            color: #667085;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+        }
+
+        /* Kartu profil */
+        .profile-card {
+            background: white;
+            text-align: center;
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px #102a4312;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            background: #dbeafe;
+            color: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .avatar img {
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-card h2 {
+            color: #102a43;
+            font-size: 21px;
+        }
+
+        .profile-card p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .profile-info {
+            border-top: 1px solid #e4eaf2;
+            margin-top: 18px;
+            padding-top: 15px;
+            text-align: left;
+        }
+
+        .profile-info p {
+            margin: 8px 0;
+        }
+
+        /* Bagian konten */
+        section.content {
+            padding: 45px 0;
+        }
+
+        .section-title {
+            margin-bottom: 22px;
+        }
+
+        .section-title h2 {
+            color: #102a43;
+            font-size: 29px;
+        }
+
+        .section-title p {
+            color: #2563eb;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #e4eaf2;
+            box-shadow: 0 5px 20px #102a4308;
+        }
+
+        .card h3 {
+            color: #102a43;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #667085;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Label keahlian */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill {
+            background: #eaf2ff;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 20px;
+        }
+
+        /* Tampilan HP */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .profile-card {
+                max-width: 400px;
+                width: 100%;
+                margin: auto;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="container">
+            <div class="logo">IBNU<span>.</span>PROFILE</div>
+
+            <ul>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#pendidikan">Pendidikan</a></li>
+                <li><a href="#keahlian">Keahlian</a></li>
+                <li><a href="#pengalaman">Pengalaman</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Profil utama -->
+    <section class="hero">
+        <div class="container hero-content">
+
+            <div>
+                <span class="label">Mahasiswa Sistem Informasi</span>
+
+                <h1>
+                    Halo, saya <span>Muhammad Ibnu Ikhsan.</span>
+                </h1>
+
+                <p class="intro">
+                    Saya mahasiswa Sistem Informasi yang tertarik pada
+                    teknologi, desain, dan pemecahan masalah. Saya ingin
+                    mengembangkan kemampuan di bidang teknologi informasi,
+                    khususnya analisis data.
+                </p>
+
+                <a href="#tentang" class="button">Kenali Saya</a>
+            </div>
+
+            <div class="profile-card">
+                <div class="avatar">
+                    <img src="/image/images.png" alt="-">
+                </div>
+
+
+
+                <div class="profile-info">
+                    <p><strong>NIM:</strong> A12.2025.07376</p>
+                    <p><strong>Kampus:</strong> UDINUS</p>
+                    <p><strong>Fakultas:</strong> Ilmu Komputer</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tentang saya -->
+    <section class="content" id="tentang">
+        <div class="container">
+            <div class="section-title">
+                <p>Perkenalan</p>
+                <h2>Tentang Saya</h2>
+            </div>
+
+            <div class="card">
+                <p>
+                    Saya senang mempelajari hal baru, terutama yang
+                    berhubungan dengan teknologi dan desain. Saya terbiasa
+                    mengatur tugas dengan perencanaan sederhana dan berusaha
+                    menyelesaikan pekerjaan tepat waktu. Saya juga ingin
+                    meningkatkan kemampuan analisis, komunikasi, dan kerja sama.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pendidikan -->
+    <section class="content" id="pendidikan">
+        <div class="container">
+            <div class="section-title">
+                <p>Latar Belakang</p>
+                <h2>Pendidikan</h2>
+            </div>
+
+            <div class="card">
+                <h3>Universitas Dian Nuswantoro</h3>
+                <p>Fakultas Ilmu Komputer</p>
+                <p>Program Studi Sistem Informasi</p>
+                <p>Mahasiswa aktif</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian -->
+    <section class="content" id="keahlian">
+        <div class="container">
+            <div class="section-title">
+                <p>Kemampuan</p>
+                <h2>Keahlian dan Minat</h2>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Keahlian</h3>
+                    <p>Kemampuan yang saya kembangkan.</p>
+
+                    <div class="skills">
+                        <span class="skill">Analisis Sistem</span>
+                        <span class="skill">HTML & CSS</span>
+                        <span class="skill">Problem Solving</span>
+                        <span class="skill">Manajemen Waktu</span>
+                        <span class="skill">Kerja Tim</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Minat</h3>
+                    <p>Bidang yang ingin saya pelajari.</p>
+
+                    <div class="skills">
+                        <span class="skill">Data Analyst</span>
+                        <span class="skill">UI/UX Design</span>
+                        <span class="skill">Web Development</span>
+                        <span class="skill">Teknologi Informasi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman -->
+    <section class="content" id="pengalaman">
+        <div class="container">
+            <div class="section-title">
+                <p>Aktivitas</p>
+                <h2>Pengalaman</h2>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Proyek Kelompok</h3>
+                    <p>
+                        Pernah memimpin proyek kelas, membagi pekerjaan,
+                        dan membantu memastikan tugas selesai sesuai target.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Organisasi Mahasiswa</h3>
+                    <p>
+                        Berpartisipasi dalam kegiatan BEM Fakultas Ilmu
+                        Komputer untuk mengembangkan komunikasi,
+                        tanggung jawab, dan kerja sama tim.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Muhammad Ibnu Ikhsan | Halaman Profil Pribadi</p>
+    </footer>
+
+</body>
+
+</html>
